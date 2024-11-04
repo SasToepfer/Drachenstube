@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/vnd.icon" href="img/gamestorelogo.png">
+    <title>Game Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./scripts/db.js"></script>
+    <script src="script.js"></script>
+
+</head>
+
+<body onload="init()">
+    <site class="site">
+        <header>
+            <headsection class="head-container content-distance">
+                <div class="logo-container">
+                    <img class="head-logo" src="img/Drachenstube_logo.png" alt="logo">
+                    <h1> Drachenstube</h1>
+                </div>
+                <div class="hamburger-menu-icon" onclick="toggleMenu()">
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                    <div class="hamburger-line"></div>
+                </div>
+            </headsection>
+        </header>
+        <main class="content-distance">
+            <div id="game-gallery" class="game-gallery">
+            </div>
+        </main>
+        <footer>
+            <div class="foot-container content-distance">Images created with Gen-Ai
+                <a href="impress.html">
+                    <h2>Impressum</h2>
+                </a>
+            </div>
+        </footer>
+    </site>
+</body>
+
+</html>

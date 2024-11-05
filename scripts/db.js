@@ -1,4 +1,4 @@
-let myDisches = [
+let myDishes = [
     {
         "name": "Flammengebratener Drachenflügel",
         "price": 17.99,
@@ -33,10 +33,33 @@ let myDisches = [
         "name": "Würzige Wolfswurst",
         "price": 10.00,
         "description": "Deftig gewürzte Wurst aus wilden Kräutern und würzigem Fleisch, perfekt für Abenteurer"
-    },
+    }    
+]
+let myDrinks =  [
     {
         "name": "Kristallklarer Elfentrunk",
         "price": 4.99,
         "description": "Ein leuchtendes Getränk aus Elfenblüten und Sternenfrüchten, belebt die Sinne"
+    },
+    {
+        "name": "Drachenodem-Elixier",
+        "price": 5.99,
+        "description": "Ein feuriges, rubinrotes Getränk mit einer Spur von Chili und Zimt, erwärmt Körper und Geist"
+    },
+    {
+        "name": "Nebelmond-Trunk",
+        "price": 6.49,
+        "description": "Ein schimmerndes, silberblaues Getränk aus Mondbeeren und Nebelblatt, sorgt für klare Gedanken"
+    },
+    {
+        "name": "Phönixfunken-Limonade",
+        "price": 4.50,
+        "description": "Sprudelndes Getränk mit einem Hauch von Ingwer und exotischen Früchten, entfacht die Lebensgeister"
+    },
+    {
+        "name": "Hexenholz-Essenz",
+        "price": 5.25,
+        "description": "Ein tiefgrünes Kräutergetränk aus seltenen Waldkräutern und Moosbeeren, bringt Ruhe und Gelassenheit"
     }
 ]
+let myBasket = [];

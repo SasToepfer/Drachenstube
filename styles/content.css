@@ -1,0 +1,100 @@
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+.block-border {
+    margin-top: 1rem;
+    border: 2px solid #f7f2f7;
+    background-color: rgb(254, 250, 250);
+    filter: drop-shadow(3px 3px rgb(210, 210, 210)) 
+}
+/* #region content */
+.content {
+    
+    width: calc(100% - 18rem);
+    height: 100%;
+}
+.content-dishes {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.content-dish-image {
+    height: 6rem;
+    margin-top: 1rem;
+    object-fit: cover;
+}
+.dish-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.add-btn {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: solid #31242d;
+    border-radius: 12%;
+}
+.add-btn:hover {
+    cursor: pointer;
+    background-color: #907e8a;
+}
+.atf-image {
+    height: 20rem;
+    width: 100%;
+    background-image: url(../img/drachenstube_atf.png);
+    background-size: cover;
+    background-position: center;
+}
+/* #endregion */
+/* #region basket */
+.basket-wrapper {
+    border: 2px solid #31242d;
+    background-color: rgb(255, 255, 255);
+    width: 20rem;
+    flex-grow: 1;
+}
+.basket {
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+.basket h2 {
+    text-align: center;
+}
+.basket-single-item-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.basket-single-item-wrapper h3 {
+    margin: 0;
+    font-size: 1rem;
+    padding-left: 0.75rem;
+    margin-bottom: 0.3rem;
+}
+.basket-single-item-wrapper img {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+}
+.basket-single-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.basket-add-remove {
+    height: 1rem;
+    display: flex;
+    align-items: center;
+}
+.sub-sum {
+    display: flex;
+    justify-content: space-between;
+}
+.final-sum {
+    display: flex;
+    justify-content: space-between;
+}
+/* #endregion */

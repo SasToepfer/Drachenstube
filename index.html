@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/vnd.icon" href="img/gamestorelogo.png">
-    <title>Game Store</title>
+    <link rel="icon" type="image/vnd.icon" href="img/Drachenstube_logo.png">
+    <title>Drachenstube</title>
+    <link rel="stylesheet" href="styles/content.css">
     <link rel="stylesheet" href="style.css">
+
     <script src="./scripts/db.js"></script>
+    <script src="scripts/template.js"></script>
     <script src="script.js"></script>
 
 </head>
@@ -27,9 +30,44 @@
                 </div>
             </headsection>
         </header>
-        <main class="content-distance">
-            <div id="game-gallery" class="game-gallery">
+        <main>
+            <div class="content-wrapper">
+                <section id="content" class="content">
+                    <div class="atf-image"></div>
+                    <div class="content-dishes">
+                        <div class="content-distance block-border">
+                            <h2>Drachenstube</h2>
+                            <p>Bewertung 4.2 von 5 Sternen</p>
+                        </div>
+                        <img class="content-dish-image" src="img/mains.png" alt="">
+                        <div id="main-dishes">
+
+                        </div>
+                        <img class="content-dish-image" src="img/drinks.png" alt="">
+                        <div id="main-drinks">
+
+                        </div>
+                    </div>
+                </section>
+                <section class="basket-wrapper">
+                    <div class="basket">
+                        <h2>Warenkorb</h2>
+                        <div id="bought-dishes" class="bought-dishes small-content-distance">
+
+                        </div>
+                        <div class="sub-sum small-content-distance" id="sub-sum">
+                        </div>
+                        <div class="sub-sum small-content-distance" id="delivery-fee">
+                        </div>
+                        <hr>
+                        <div class="final-sum small-content-distance" id="final-sum">
+                        </div>
+                    </div>
             </div>
+            </section>
+            </div>
+
+
         </main>
         <footer>
             <div class="foot-container content-distance">Images created with Gen-Ai

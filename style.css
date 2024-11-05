@@ -24,9 +24,8 @@
 
 html {
     font-family: 'Metal Mania';
-    font-weight: 100;
-    font-size: 22px;
-    color: white;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
     box-sizing: border-box;
 }
 
@@ -36,19 +35,27 @@ h1 {
 }
 
 h2 {
+    margin: 0.5rem auto;
+    font-size: 2rem;
+}
+h3 {
+    margin: 0.5rem auto;
     font-size: 1.5rem;
+}
+p {
+    margin: 0.5rem auto;
 }
 
 body {
     font-size: 1rem;
     margin: 0;
-    background-color: rgb(190, 184, 215);
+    background-color: rgb(255, 255, 255);
 }
 .site {
-    height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
 a {
     text-decoration: none;
     color: white;
@@ -68,17 +75,19 @@ button:hover {
 }
 
 .content-distance {
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 2rem;
+    padding-right: 1rem; 
+}
+.small-content-distance {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; 
 }
 
 /* #region head */
-header {
-    background-color: #31242d;
-}
 
 .head-container {
-    height: 8rem;
+    background-color: #31242d;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -88,22 +97,40 @@ header {
     align-items: center;
 }
 .head-logo {
-    width: 6rem;
+    width: 4rem;
 }
-main {
+.hamburger-menu-icon {
+    height: 2rem;
+    width: 2rem;
     display: flex;
-    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.hamburger-menu-icon:hover {
+    background-color: #008000;
+}
+.hamburger-line {
+    width: 1.5rem;
+    height: 0.15rem;
+    background-color: rgb(255, 255, 255);
+}
+/* #endregion */
+/* #region Main */
+
+main {
+    
+    color: black;
 }
 
-.game-gallery {
-    display: flex;
-    gap: 4rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+.price {
+    color: #763c65;
 }
+
+
+/* #endreagion */
+/* #region footer */
+
 
 footer {
     background-color: #31242d;
@@ -116,3 +143,7 @@ footer {
     justify-content: space-between;
     align-items: center;
 }
+/* #endreagion */
+/* #region responsive */
+
+/* #endreagion */

@@ -35,6 +35,33 @@ let myDishes = [
         "description": "Deftig gewürzte Wurst aus wilden Kräutern und würzigem Fleisch, perfekt für Abenteurer"
     }    
 ]
+let myDesserts = [
+    {
+        "name": "Sternenstaub-Tarte",
+        "price": 6.99,
+        "description": "Eine funkelnde Tarte mit einer Füllung aus Mondbeeren und Sternfrucht, bestäubt mit essbarem Sternenstaub"
+    },
+    {
+        "name": "Drachenherz-Parfait",
+        "price": 7.50,
+        "description": "Ein cremiges Schichtdessert mit roten Beeren und scharfem Drachengemüse, serviert mit einer feurigen Sauce"
+    },
+    {
+        "name": "Elfenhain-Pudding",
+        "price": 5.25,
+        "description": "Ein samtiger Pudding aus Waldbeeren und Kräutern, garniert mit kandierten Blüten und einem Hauch von Honig"
+    },
+    {
+        "name": "Goldener Phönixkeks",
+        "price": 3.99,
+        "description": "Ein warmer, knuspriger Keks mit goldener Glasur und leichtem Ingwer-Aroma, entfacht das innere Feuer"
+    },
+    {
+        "name": "Dämmerglanz-Mousse",
+        "price": 6.75,
+        "description": "Eine fluffige Mousse aus mystischen Nachtfrüchten und einem Hauch von Dämmerlicht, serviert in einem Kristallschälchen"
+    }
+]
 let myDrinks =  [
     {
         "name": "Kristallklarer Elfentrunk",

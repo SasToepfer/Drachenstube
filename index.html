@@ -19,15 +19,16 @@
     <site class="site">
         <header>
             <headsection class="head-container content-distance">
-                <div class="logo-container">
+                <logo class="logo-container">
                     <img class="head-logo" src="img/Drachenstube_logo.png" alt="logo">
                     <h1> Drachenstube</h1>
-                </div>
-                <div class="hamburger-menu-icon" onclick="toggleMenu()">
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
-                    <div class="hamburger-line"></div>
-                </div>
+                </logo>
+                <nav>
+                    <a href="#main-dishes">Essen</a>
+                    <a href="#main-desserts">Desserts</a>
+                    <a href="#main-drinks">Getränke</a>
+                </nav>
+                <img src="img/shopping_icon.png" class="basket-opener" onclick="showBasketMobile()"></img>
             </headsection>
         </header>
         <main>
@@ -43,31 +44,38 @@
                         <div id="main-dishes">
 
                         </div>
+                        <img class="content-dish-image" src="img/dessert2.png" alt="">
+                        <div id="main-desserts">
+
+                        </div>
                         <img class="content-dish-image" src="img/drinks.png" alt="">
                         <div id="main-drinks">
 
                         </div>
                     </div>
                 </section>
-                <section class="basket-wrapper">
+                <section id="basket-wrapper" class="basket-wrapper basket-wrapper-closed">
                     <div class="basket">
                         <h2>Warenkorb</h2>
                         <div id="bought-dishes" class="bought-dishes small-content-distance">
 
                         </div>
-                        <div class="sub-sum small-content-distance" id="sub-sum">
-                        </div>
-                        <div class="sub-sum small-content-distance" id="delivery-fee">
-                        </div>
+                        <div class="sub-sum small-content-distance" id="sub-sum"></div>
+                        <div class="sub-sum small-content-distance" id="delivery-fee"></div>
                         <hr>
-                        <div class="final-sum small-content-distance" id="final-sum">
+                        <div class="final-sum small-content-distance" id="final-sum"></div>
+                        <div class="order-wrapper">
+                            <button onclick="orderBasket()">Bestellen</button>
                         </div>
                     </div>
+                </section>
             </div>
-            </section>
+            <div id="order-overlay" class="order-overlay d-none" onclick="toggleOrderDialog()">
+                <div class="order-overlay-container" onclick="stopBubbling(event)">
+                    <span id="dialog-text">Danke für ihre Bestellung</span>
+                    <button onclick="toggleOrderDialog()">close</button>
+                </div>
             </div>
-
-
         </main>
         <footer>
             <div class="foot-container content-distance">Images created with Gen-Ai

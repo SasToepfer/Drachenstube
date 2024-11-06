@@ -48,6 +48,35 @@
     background-position: center;
 }
 /* #endregion */
+
+/* #region overlay */
+.order-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.268);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order-overlay-container {
+    width: 60%;
+    height: 40vh;
+    background-color: #31242d;
+    color: white;
+    font-size: 3rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#dialog-text {
+    text-align: center;
+}
+/* #endregion */
 /* #region basket */
 .basket-wrapper {
     border: 2px solid #31242d;
@@ -57,8 +86,10 @@
 }
 .basket {
     width: 100%;
+    height: 100vh;
     position: sticky;
     top: 0;
+    overflow-y: scroll;
 }
 .basket h2 {
     text-align: center;
@@ -96,5 +127,25 @@
 .final-sum {
     display: flex;
     justify-content: space-between;
+}
+.order-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+}
+.order-wrapper button {
+    height: 2rem;
+    width: 5rem;
+    font-family: 'Metal Mania';
+    font-size: 1rem;
+    border-radius: 4px;
+    background-color: #31242d;
+    color: white;
+}
+.order-wrapper button:hover {
+    background-color: #705367;
+    filter: drop-shadow(-1px -1px rgba(0, 0, 0, 0.302)) 
 }
 /* #endregion */

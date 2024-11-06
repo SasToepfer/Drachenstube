@@ -27,6 +27,7 @@ html {
     font-size: 24px;
     color: rgb(255, 255, 255);
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 h1 {
@@ -67,13 +68,25 @@ a:hover {
 }
 
 button {
-    width: auto;
+    height: 2rem;
+    width: 5rem;
+    font-family: 'Metal Mania';
+    font-size: 1rem;
+    border-radius: 12px;
+    background-color: #000000;
+    color: white;
 }
 
 button:hover {
     cursor: pointer;
+    background-color: #31242d;
 }
-
+.d-none {
+    display: none;
+}
+.o-hid {
+    overflow: hidden;
+}
 .content-distance {
     padding-left: 2rem;
     padding-right: 1rem; 
@@ -83,14 +96,16 @@ button:hover {
     padding-right: 0.5rem; 
 }
 
+/* #endregion */
 /* #region head */
 
 .head-container {
     background-color: #31242d;
     height: 4rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    gap: 5rem;
 }
 .logo-container {
     display: flex;
@@ -99,21 +114,22 @@ button:hover {
 .head-logo {
     width: 4rem;
 }
-.hamburger-menu-icon {
-    height: 2rem;
-    width: 2rem;
+nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 1rem;
 }
-.hamburger-menu-icon:hover {
-    background-color: #008000;
+.basket-opener {
+    display: none;
+    filter: invert(1);
+    width: 2rem;
+    height: 2rem;
+    border: solid #31242d;
+    border-radius: 12%;
 }
-.hamburger-line {
-    width: 1.5rem;
-    height: 0.15rem;
-    background-color: rgb(255, 255, 255);
+.basket-opener:hover {
+    cursor: pointer;
+    background-color: #907e8a;
 }
 /* #endregion */
 /* #region Main */
@@ -145,5 +161,62 @@ footer {
 }
 /* #endreagion */
 /* #region responsive */
+
+@media(min-width: 1920px) {
+    
+    html {
+        font-size: calc(24px + 0.25vw);
+    }
+}
+@media (max-width: 1050px){
+    html {
+        font-size: 20px;
+    }
+}
+@media (max-width: 900px){
+    html {
+        font-size: 18px;
+    }
+}
+@media (max-width: 800px){
+    html {
+        font-size: 16px;
+    }
+    .order-overlay-container {
+        font-size: 2rem;
+    }
+}
+@media (max-width: 650px){
+    .basket-wrapper {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+    .basket-wrapper-closed {
+        transform: translateY(100%);
+    }
+    .content {
+        width: 100%;
+    }
+    .head-container {
+        justify-content: space-between;
+        gap: 0;
+    }
+    .logo-container h1 {
+        display: none;
+    }
+    .basket-opener {
+        display: block;
+    }
+}
+@media (max-width: 450px){
+    nav {
+        display: none;
+    }
+    .order-overlay-container {
+        font-size: 1.5rem;
+    }
+}
+
 
 /* #endreagion */

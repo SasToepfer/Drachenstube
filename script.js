@@ -8,10 +8,13 @@ function init() {
 
 function showDishes() {
     for (let index = 0; index < myDishes.length; index++) {
-        document.getElementById("main-dishes").innerHTML += writeDishes(index);
+        document.getElementById("main-dishes").innerHTML += writeContent(myDishes,index);
+    }
+    for (let index = 0; index < myDesserts.length; index++) {
+        document.getElementById("main-desserts").innerHTML += writeContent(myDesserts,index);
     }
     for (let index = 0; index < myDrinks.length; index++) {
-        document.getElementById("main-drinks").innerHTML += writeDrinks(index);
+        document.getElementById("main-drinks").innerHTML += writeContent(myDrinks,index);
     }
 }
 
@@ -19,16 +22,12 @@ function addToBasket(dishName) {
     let priceRef = 0;
     let ArrayRef = getBaseArray(dishName);
     let IndexRef = getBaseIndex(dishName);
-
     if (myBasket.find(e => e.name === dishName)) {
         let BasketIndexRef = getBasketIndex(dishName);
         myBasket[BasketIndexRef].basketAmount += 1;
-        priceRef = myBasket[BasketIndexRef].calcPrice + myBasket[BasketIndexRef].price;
-        priceRef = parseFloat(priceRef.toFixed(2));
-        myBasket[BasketIndexRef].calcPrice = priceRef;
     } else {
         priceRef = setBasketPrice(IndexRef, ArrayRef)
-        myBasket.push({ "name": dishName, "price": priceRef, "basketAmount": 1, "calcPrice": priceRef});
+        myBasket.push({ "name": dishName, "price": priceRef, "basketAmount": 1});
     }
     renderBasket();
     writePayText();
@@ -36,20 +35,13 @@ function addToBasket(dishName) {
 
 function subtractFromBasket(dishName) {
     let indexRef = getBasketIndex(dishName);
-    let priceRef = 0;
-
-
     if (myBasket[indexRef].basketAmount - 1 <= 0) {
         removeFromBasket(dishName);
     } else {
         myBasket[indexRef].basketAmount = myBasket[indexRef].basketAmount - 1;
-        priceRef = myBasket[indexRef].calcPrice - myBasket[indexRef].price;
-        priceRef = parseFloat(priceRef.toFixed(2));
-        myBasket[indexRef].calcPrice = priceRef;
         renderBasket();
         writePayText();
     }
-    
 }
 
 function removeFromBasket(dishName) {
@@ -66,7 +58,6 @@ function removeFromBasket(dishName) {
 function writePayText() {
     hidePayText();
     preSum = parseFloat(calculateSum().toFixed(2));
-    
     if (preSum >= 50) {
         finalSum = preSum;
     } else {
@@ -88,6 +79,8 @@ function setBasketPrice(index, array) {
     switch (array) {
         case "myDishes":
             return myDishes[index].price;
+        case "myDesserts":
+            return myDesserts[index].price;
         case "myDrinks":
             return myDrinks[index].price;
     }
@@ -103,27 +96,25 @@ function renderBasket() {
 function calculateSum() {
     let sum = 0;
     for (let index = 0; index < myBasket.length; index++) {
-        sum += myBasket[index].calcPrice;
+        sum += myBasket[index].price * myBasket[index].basketAmount;
     }
     return sum;
 }
 
 function getBaseArray(dishName) {
-    for (let index = 0; index < myDishes.length; index++) {
-        if (myDishes[index].name == dishName) {
-            return "myDishes";
-        }
-    }
-    for (let index = 0; index < myDrinks.length; index++) {
-        if (myDrinks[index].name == dishName) {
-            return "myDrinks";
-        }
-    }
+    if (myDishes.find(e => e.name == dishName)) {return "myDishes"}
+    if (myDesserts.find(e => e.name == dishName)) {return "myDesserts"}
+    if (myDrinks.find(e => e.name == dishName)) {return "myDrinks"}
 }
 
 function getBaseIndex(dishName) {
     for (let index = 0; index < myDishes.length; index++) {
         if (myDishes[index].name == dishName) {
+            return index;
+        }
+    }
+    for (let index = 0; index < myDesserts.length; index++) {
+        if (myDesserts[index].name == dishName) {
             return index;
         }
     }
@@ -140,6 +131,31 @@ function getBasketIndex(dishName) {
             return index;
         }
     }
-    
 }
 
+function orderBasket() {
+    if (myBasket.length != 0) {
+        myBasket = [];
+        renderBasket();
+        writePayText()
+        toggleOrderDialog("Danke für ihre Bestellung");
+    } else {
+        toggleOrderDialog("Bitte erst etwas in den Warenkorb legen");
+    }
+}
+
+function toggleOrderDialog(text) {
+    document.getElementById("order-overlay").classList.toggle("d-none");
+    document.body.classList.toggle("o-hid");
+    document.getElementById("dialog-text").innerHTML = text;
+    hidePayText();
+}
+
+function stopBubbling(event) {
+    event.stopPropagation();
+}
+
+function showBasketMobile() {
+    document.getElementById("basket-wrapper").classList.toggle("basket-wrapper-closed");
+    document.body.classList.toggle("o-hid");
+}
